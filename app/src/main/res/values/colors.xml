@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="primary">#000000</color>
+    <color name="primaryDark">#FFFFFF</color>
+    <color name="onPrimary">#E2E2E2</color>
 
+
+    <color name="debug_color">#F60000</color>
 </resources>
