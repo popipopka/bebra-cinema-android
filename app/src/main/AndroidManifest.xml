@@ -23,6 +23,7 @@
         </activity>
 
         <activity android:name=".presentation.login.activity.LoginActivity"/>
+        <activity android:name=".presentation.register.activity.RegisterActivity"/>
     </application>
 
 </manifest>

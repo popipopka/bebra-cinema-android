@@ -2,8 +2,14 @@
     <string name="app_name">Bebra Cinema</string>
 
     <string name="login_label">Login</string>
+    <string name="register_label">Register</string>
+
     <string name="username_input_hint">Username</string>
     <string name="password_input_hint">Password</string>
+    <string name="first_name_input_hint">First name</string>
+    <string name="last_name_input_hint">Last name</string>
+    <string name="email_input_hint">Email</string>
+
     <string name="sign_in_btn">Sign in</string>
     <string name="sign_up_btn">Sign up</string>
 </resources>
