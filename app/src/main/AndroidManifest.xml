@@ -22,7 +22,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".presentation.login.activity.LoginActivity"/>
+        <activity
+            android:name=".presentation.login.activity.LoginActivity"
+            android:launchMode="singleTask"
+            />
         <activity android:name=".presentation.register.activity.RegisterActivity"/>
     </application>
 
