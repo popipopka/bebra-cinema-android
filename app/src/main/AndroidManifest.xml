@@ -24,9 +24,8 @@
 
         <activity
             android:name=".presentation.login.activity.LoginActivity"
-            android:launchMode="singleTask"
-            />
-        <activity android:name=".presentation.register.activity.RegisterActivity"/>
+            android:launchMode="singleTask" />
+        <activity android:name=".presentation.register.activity.RegisterActivity" />
     </application>
 
 </manifest>

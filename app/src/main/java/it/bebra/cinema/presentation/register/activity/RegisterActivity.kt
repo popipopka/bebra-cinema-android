@@ -12,7 +12,7 @@ import it.bebra.cinema.presentation.login.activity.LoginActivity
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.activity_registration)
 
         val createAccountBtn: Button = findViewById(R.id.sign_up_btn)
         createAccountBtn.setOnClickListener() {

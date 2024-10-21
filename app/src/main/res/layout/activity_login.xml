@@ -9,7 +9,7 @@
         android:id="@+id/login_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login_label"
+        android:text="@string/label_login"
         android:textAllCaps="true"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/username_input_hint" />
+            android:hint="@string/hint_username_input" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -49,7 +49,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/password_input_hint"
+            android:hint="@string/hint_password_input"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,7 +58,7 @@
         android:layout_width="330dp"
         android:layout_height="56dp"
         android:layout_marginTop="15dp"
-        android:text="@string/sign_in_btn"
+        android:text="@string/button_sign_in"
         android:textAllCaps="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -69,7 +69,7 @@
         style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_width="330dp"
         android:layout_height="56dp"
-        android:text="@string/sign_up_btn"
+        android:text="@string/button_sign_up"
         android:textAllCaps="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
