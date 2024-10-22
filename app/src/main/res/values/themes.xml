@@ -3,13 +3,22 @@
     <style name="Base.Theme.BebraCinema" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorOnPrimary">@color/color_onPrimary</item>
+    </style>
 
+    <style name="Theme.BebraCinema" parent="Base.Theme.BebraCinema" />
+
+    <style name="Widget.BebraCinema.Button.Filled" parent="Widget.Material3.Button">
         <item name="cornerRadius">20dp</item>
+    </style>
+
+    <style name="Widget.BebraCinema.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="cornerRadius">20dp</item>
+    </style>
+
+    <style name="Widget.BebraCinema.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="boxCornerRadiusBottomEnd">20dp</item>
         <item name="boxCornerRadiusBottomStart">20dp</item>
         <item name="boxCornerRadiusTopEnd">20dp</item>
         <item name="boxCornerRadiusTopStart">20dp</item>
     </style>
-
-    <style name="Theme.BebraCinema" parent="Base.Theme.BebraCinema" />
 </resources>
