@@ -7,6 +7,10 @@ android {
     namespace = "it.bebra.cinema"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "it.bebra.cinema"
         minSdk = 30
@@ -36,6 +40,11 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.rxandroid)
+    implementation(libs.rxjava)
+
+    runtimeOnly(libs.hilt.android)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

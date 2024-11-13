@@ -3,22 +3,56 @@
     <style name="Base.Theme.BebraCinema" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorOnPrimary">@color/color_onPrimary</item>
+        <item name="colorOnSurfaceVariant">@color/color_onSurfaceVariant</item>
+        <item name="colorSurfaceContainerHigh">@color/color_onSurfaceContainerHigh</item>
+        <item name="colorOnSurface">@color/color_onSurface</item>
+        <item name="colorSurfaceContainer">@color/color_surfaceContainer</item>
+        <item name="colorSecondaryContainer">@color/color_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/color_onSecondaryContainer</item>
     </style>
 
     <style name="Theme.BebraCinema" parent="Base.Theme.BebraCinema" />
 
     <style name="Widget.BebraCinema.Button.Filled" parent="Widget.Material3.Button">
-        <item name="cornerRadius">20dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.BebraCinema.SmallComponent</item>
     </style>
 
     <style name="Widget.BebraCinema.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
-        <item name="cornerRadius">20dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.BebraCinema.SmallComponent</item>
     </style>
 
-    <style name="Widget.BebraCinema.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="boxCornerRadiusBottomEnd">20dp</item>
-        <item name="boxCornerRadiusBottomStart">20dp</item>
-        <item name="boxCornerRadiusTopEnd">20dp</item>
-        <item name="boxCornerRadiusTopStart">20dp</item>
+    <style name="Widget.BebraCinema.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="shapeAppearance">@style/ShapeAppearance.BebraCinema.SmallComponent</item>
+    </style>
+
+    <style name="Widget.BebraCinema.BottomNavigation.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:width">88dp</item>
+        <item name="android:height">44dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.BebraCinema.SmallComponent</item>
+    </style>
+
+    <style name="Widget.BebraCinema.SearchBar" parent="Widget.Material3.SearchBar">
+        <item name="shapeAppearance">@style/ShapeAppearance.BebraCinema.MediumComponent</item>
+    </style>
+
+    <style name="Widget.BebraCinema.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="shapeAppearance">@style/ShapeAppearance.BebraCinema.MediumComponent</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+    <style name="Widget.BebraCinema.ImageView" parent="Widget.MaterialComponents.ShapeableImageView">
+        <item name="shapeAppearance">@style/ShapeAppearance.BebraCinema.Corner.Image</item>
+    </style>
+
+    <style name="ShapeAppearance.BebraCinema.Corner.Image" parent="ShapeAppearance.Material3.Corner.None">
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="ShapeAppearance.BebraCinema.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSize">30dp</item>
+    </style>
+
+    <style name="ShapeAppearance.BebraCinema.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">22dp</item>
     </style>
 </resources>

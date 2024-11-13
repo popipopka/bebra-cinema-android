@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#000000</color>
-    <color name="primaryDark">#FFFFFF</color>
-    <color name="onPrimary">#E2E2E2</color>
+    <color name="color_primary">#000000</color>
+    <color name="color_onPrimary">#E2E2E2</color>
 
+    <color name="color_onSurfaceVariant">#474747</color>
+    <color name="color_onSurfaceContainerHigh">#E8E8E8</color>
+    <color name="color_onSurface">#777777</color>
+    <color name="color_surfaceContainer">#EEEEEE</color>
 
-    <color name="debug_color">#F60000</color>
+    <color name="color_secondaryContainer">#D4D4D4</color>
+    <color name="color_onSecondaryContainer">#1B1B1B</color>
+
+    <color name="color_invisible">#00000000</color>
+
+    <color name="color_debug">#F60000</color>
 </resources>
