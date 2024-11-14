@@ -14,21 +14,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.search.SearchView
-        android:id="@+id/home_search_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:hint="@string/hint_search_bar_input"
-        app:layout_anchor="@id/search_bar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_bar">
-
-        <!-- Результат запроса будет здесь (ScrollView, RecyclerView и другие) -->
-
-    </com.google.android.material.search.SearchView>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
