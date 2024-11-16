@@ -1,15 +1,15 @@
-package it.bebra.cinema.presentation.ticket.fragment
+package it.bebra.cinema.presentation.tickets.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import it.bebra.cinema.databinding.FragmentTicketBinding
+import it.bebra.cinema.databinding.FragmentTicketsBinding
 
-class TicketFragment : Fragment() {
+class TicketsFragment : Fragment() {
 
-    private var _binding: FragmentTicketBinding? = null
+    private var _binding: FragmentTicketsBinding? = null
     private val binding
         get() = _binding!!
 
@@ -18,7 +18,7 @@ class TicketFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentTicketBinding.inflate(inflater, container, false)
+        _binding = FragmentTicketsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
