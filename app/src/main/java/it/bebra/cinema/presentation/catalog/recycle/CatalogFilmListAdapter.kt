@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import it.bebra.cinema.R
+import it.bebra.cinema.common.util.formatDuration
 import it.bebra.cinema.databinding.ItemFilmCatalogBinding
 import it.bebra.domain.model.FilmListModel
 
@@ -29,21 +30,6 @@ class CatalogFilmListAdapter(
             binding.filmTitleLabel.text = film.name
 
             binding.filmDurationLabel.text = formatDuration(film.duration)
-        }
-
-        private fun formatDuration(duration: Int): String {
-            val minutes: Int = duration % 60
-            val hours: Int = (duration - minutes) / 60;
-
-            if (hours == 0) {
-                return "$minutes min"
-            }
-
-            if (minutes == 0) {
-                return "$hours h"
-            }
-
-            return "$hours h $minutes min"
         }
     }
 
