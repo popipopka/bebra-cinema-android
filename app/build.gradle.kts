@@ -40,9 +40,11 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
+
+    implementation(libs.coil)
 
     implementation(libs.rxandroid)
-    implementation(libs.rxjava)
 
     runtimeOnly(libs.hilt.android)
 

@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
                 addFragment(CATALOG, CatalogFragment())
                 addFragment(PROFILE, ProfileFragment())
             }
-        navController.navTo(CATALOG)
 
         val bottomNavigation = binding.bottomNavigationView
 
@@ -57,5 +56,8 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+
+        navController.navTo(CATALOG)
+        bottomNavigation.menu.getItem(1).isChecked = true
     }
 }

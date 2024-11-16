@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "bebra-cinema-android"
 include(":app")
+include(":domain")

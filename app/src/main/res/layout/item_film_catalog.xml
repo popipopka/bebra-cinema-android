@@ -2,20 +2,21 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="175dp"
-    android:layout_height="275dp"
+    style="@style/Widget.BebraCinema.CardView.WithoutStroke"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     app:cardBackgroundColor="@color/color_invisible"
     app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/film_poster"
-            android:layout_width="165dp"
             style="@style/Widget.BebraCinema.ImageView"
+            android:layout_width="165dp"
             android:layout_height="235dp"
             android:scaleType="centerCrop"
             android:src="@drawable/default_film_poster"

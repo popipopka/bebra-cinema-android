@@ -48,6 +48,14 @@
         <item name="cornerSize">10dp</item>
     </style>
 
+    <style name="Widget.BebraCinema.CardView.WithoutStroke" parent="Widget.Material3.CardView.Outlined">
+        <item name="shapeAppearance">@style/ShapeAppearance.BebraCinema.Corner.None</item>
+    </style>
+
+    <style name="ShapeAppearance.BebraCinema.Corner.None" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">0dp</item>
+    </style>
+
     <style name="ShapeAppearance.BebraCinema.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
         <item name="cornerSize">30dp</item>
     </style>
