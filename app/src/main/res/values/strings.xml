@@ -16,4 +16,13 @@
 
     <string name="label_default_film_title">Film title</string>
     <string name="label_default_duration_title">Film duration</string>
+
+    <string name="label_default_session_date">1 January 1970, 00:00</string>
+    <string name="label_default_ticket_place">Place</string>
+    <string name="label_default_ticket_row">Row</string>
+    <string name="label_default_ticket_place_number">0</string>
+    <string name="label_default_ticket_row_number">0</string>
+
+    <string name="title_ticket_fragment">Tickets</string>
+    <string name="title_profile_fragment">Profile</string>
 </resources>

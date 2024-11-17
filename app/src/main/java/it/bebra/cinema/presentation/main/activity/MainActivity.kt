@@ -10,7 +10,7 @@ import it.bebra.cinema.presentation.main.controller.FragmentLinks.PROFILE
 import it.bebra.cinema.presentation.main.controller.FragmentLinks.TICKET
 import it.bebra.cinema.presentation.main.controller.NavigationController
 import it.bebra.cinema.presentation.profile.fragment.ProfileFragment
-import it.bebra.cinema.presentation.ticket.fragment.TicketFragment
+import it.bebra.cinema.presentation.tickets.fragment.TicketsFragment
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         navController = NavigationController(supportFragmentManager, binding.mainFragmentContainerView)
             .apply {
-                addFragment(TICKET, TicketFragment())
+                addFragment(TICKET, TicketsFragment())
                 addFragment(CATALOG, CatalogFragment())
                 addFragment(PROFILE, ProfileFragment())
             }

@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import it.bebra.cinema.databinding.FragmentProfileBinding
-import it.bebra.cinema.databinding.FragmentTicketBinding
 
 class ProfileFragment : Fragment() {
 

@@ -1,14 +1,13 @@
-package it.bebra.cinema.presentation.catalog.recycle
+package it.bebra.cinema.common.ui
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class FilmCatalogGridItemDecoration(
-    private val bottomSpacing: Int,
-    private val spanCount: Int
+class HorizontalCenteringItemDecoration(
+    private val spanCount: Int,
+    private val k: Int
 ) : RecyclerView.ItemDecoration() {
-
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
@@ -17,9 +16,7 @@ class FilmCatalogGridItemDecoration(
     ) {
         val cellWidth = parent.width / spanCount
 
-        outRect.bottom = bottomSpacing
-
-        outRect.left = cellWidth / 16
+        outRect.left = cellWidth / k
         outRect.right = outRect.left
     }
 }
