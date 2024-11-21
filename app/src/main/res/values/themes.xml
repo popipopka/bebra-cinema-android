@@ -3,12 +3,11 @@
     <style name="Base.Theme.BebraCinema" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorOnPrimary">@color/color_onPrimary</item>
+        <item name="colorSurface">@color/color_surface</item>
         <item name="colorOnSurfaceVariant">@color/color_onSurfaceVariant</item>
         <item name="colorSurfaceContainerHigh">@color/color_onSurfaceContainerHigh</item>
         <item name="colorOnSurface">@color/color_onSurface</item>
-        <item name="colorSurfaceContainer">@color/color_surfaceContainer</item>
         <item name="colorSecondaryContainer">@color/color_secondaryContainer</item>
-        <item name="colorOnSecondaryContainer">@color/color_onSecondaryContainer</item>
     </style>
 
     <style name="Theme.BebraCinema" parent="Base.Theme.BebraCinema" />

@@ -2,22 +2,22 @@ package it.bebra.cinema.presentation.catalog.recycle
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import it.bebra.cinema.R
 import it.bebra.cinema.common.util.formatDuration
 import it.bebra.cinema.databinding.ItemFilmCatalogBinding
-import it.bebra.domain.model.FilmListModel
+import it.bebra.domain.model.MovieListModel
 
-class CatalogFilmListAdapter(
-    private val items: List<FilmListModel>
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CatalogFilmListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private val data: MutableList<MovieListModel> = mutableListOf()
 
     class FilmViewHolder(
         private val binding: ItemFilmCatalogBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(film: FilmListModel) {
+        fun bind(film: MovieListModel) {
             film.posterUrl?.let {
                 binding.filmPoster.load(film.posterUrl) {
                     crossfade(true)
@@ -40,11 +40,20 @@ class CatalogFilmListAdapter(
         return FilmViewHolder(vhBinding)
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = data.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is FilmViewHolder) {
-            holder.bind(items[position])
+            holder.bind(data[position])
         }
+    }
+
+    fun addData(data: List<MovieListModel>) {
+        val diffCallback = CatalogFilmListDiffUtil(this.data, data)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+
+        this.data.addAll(data)
+
+        diffResult.dispatchUpdatesTo(this)
     }
 }

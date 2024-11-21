@@ -2,7 +2,8 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="360dp"
+    android:layout_width="370dp"
+    app:strokeWidth="0dp"
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,7 +34,6 @@
             android:letterSpacing="0.03"
             android:lines="2"
             android:text="@string/label_default_film_title"
-            android:textColor="@color/color_onSecondaryContainer"
             app:layout_constraintLeft_toRightOf="@id/film_poster"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,8 +43,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:ellipsize="end"
+            android:letterSpacing="0.04"
             android:maxLines="1"
             android:text="@string/label_default_session_date"
             app:layout_constraintLeft_toRightOf="@id/film_poster"
@@ -52,13 +53,14 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/ticket_place_label"
-            style="@style/TextAppearance.Material3.LabelLarge"
+            style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:letterSpacing="0.05"
             android:text="@string/label_default_ticket_place"
+            app:layout_constraintBottom_toTopOf="@id/ticket_place_number"
             app:layout_constraintLeft_toRightOf="@id/film_poster"
             app:layout_constraintRight_toLeftOf="@id/ticket_row_label"
             app:layout_constraintTop_toBottomOf="@id/session_date" />
@@ -71,18 +73,20 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:text="@string/label_default_ticket_place_number"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/film_poster"
             app:layout_constraintRight_toLeftOf="@id/ticket_row_number"
             app:layout_constraintTop_toBottomOf="@id/ticket_place_label" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/ticket_row_label"
-            style="@style/TextAppearance.Material3.LabelLarge"
+            style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:letterSpacing="0.05"
             android:text="@string/label_default_ticket_row"
+            app:layout_constraintBottom_toTopOf="@id/ticket_row_number"
             app:layout_constraintLeft_toRightOf="@id/ticket_place_label"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/session_date" />
@@ -95,6 +99,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:text="@string/label_default_ticket_place_number"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/ticket_place_number"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ticket_row_label" />

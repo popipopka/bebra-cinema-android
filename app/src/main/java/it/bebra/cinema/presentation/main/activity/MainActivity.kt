@@ -2,6 +2,7 @@ package it.bebra.cinema.presentation.main.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
 import it.bebra.cinema.R
 import it.bebra.cinema.databinding.ActivityMainBinding
 import it.bebra.cinema.presentation.catalog.fragment.CatalogFragment
@@ -12,6 +13,7 @@ import it.bebra.cinema.presentation.main.controller.NavigationController
 import it.bebra.cinema.presentation.profile.fragment.ProfileFragment
 import it.bebra.cinema.presentation.tickets.fragment.TicketsFragment
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     companion object {
         private val TAG = MainActivity::class.simpleName
@@ -27,12 +29,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        navController = NavigationController(supportFragmentManager, binding.mainFragmentContainerView)
-            .apply {
-                addFragment(TICKET, TicketsFragment())
-                addFragment(CATALOG, CatalogFragment())
-                addFragment(PROFILE, ProfileFragment())
-            }
+        navController =
+            NavigationController(supportFragmentManager, binding.mainFragmentContainerView)
+                .apply {
+                    addFragment(TICKET, TicketsFragment())
+                    addFragment(CATALOG, CatalogFragment())
+                    addFragment(PROFILE, ProfileFragment())
+                }
 
         val bottomNavigation = binding.bottomNavigationView
 
