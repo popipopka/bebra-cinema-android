@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#CBCBCB</color>
+    <color name="color_onPrimary">#111111</color>
+
+    <color name="color_surface">#1C1C1C</color>
+    <color name="color_onSurfaceVariant">#B2B2B2</color>
+    <color name="color_onSurfaceContainerHigh">#262626</color>
+    <color name="color_onSurface">#B2B2B2</color>
+
+    <color name="color_secondaryContainer">#404040</color>
+</resources>
