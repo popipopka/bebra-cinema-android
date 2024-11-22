@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back_arrow"
+        app:navigationIconTint="@color/color_primary"
+        app:title="@string/default_title_movie_activity"
+        app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/movie_poster"
+        style="@style/Widget.BebraCinema.ImageView"
+        android:layout_width="165dp"
+        android:layout_height="235dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_film_poster"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        tools:ignore="ContentDescription" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/movie_name"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="217dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:letterSpacing="0.03"
+        android:lines="2"
+        android:text="@string/label_default_movie_name"
+        app:layout_constraintLeft_toRightOf="@id/movie_poster"
+        app:layout_constraintTop_toBottomOf="@id/top_bar" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/movie_genres"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="217dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="2"
+        android:text="@string/label_default_movie_genres"
+        app:layout_constraintLeft_toRightOf="@id/movie_poster"
+        app:layout_constraintTop_toBottomOf="@id/movie_name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/movie_duration"
+        style="@style/TextAppearance.Material3.LabelLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:text="@string/label_default_movie_duration"
+        app:layout_constraintLeft_toRightOf="@id/movie_poster"
+        app:layout_constraintTop_toBottomOf="@id/movie_genres" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/movie_duration_value"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:letterSpacing="0.03"
+        android:text="@string/label_default_movie_duration_value"
+        app:layout_constraintLeft_toRightOf="@id/movie_duration"
+        app:layout_constraintTop_toBottomOf="@id/movie_genres" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/movie_year"
+        style="@style/TextAppearance.Material3.LabelLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:text="@string/label_default_movie_year"
+        app:layout_constraintLeft_toRightOf="@id/movie_poster"
+        app:layout_constraintTop_toBottomOf="@id/movie_duration" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/movie_year_value"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:letterSpacing="0.03"
+        android:text="@string/label_default_movie_year_value"
+        app:layout_constraintLeft_toRightOf="@id/movie_year"
+        app:layout_constraintTop_toBottomOf="@id/movie_duration_value" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/movie_producer"
+        style="@style/TextAppearance.Material3.LabelLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:text="@string/label_default_movie_producer"
+        app:layout_constraintLeft_toRightOf="@id/movie_poster"
+        app:layout_constraintTop_toBottomOf="@id/movie_year" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/movie_producer_value"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:letterSpacing="0.03"
+        android:lines="2"
+        android:text="@string/label_default_movie_producer_value"
+        app:layout_constraintLeft_toRightOf="@id/movie_producer"
+        app:layout_constraintTop_toBottomOf="@id/movie_year_value" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movie_poster">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/movie_description"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@string/text_default_description" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/description_state_arrow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="12dp"
+                android:src="@drawable/ic_expand_arrow" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

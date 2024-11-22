@@ -14,15 +14,25 @@
     <string name="button_sign_in">Sign in</string>
     <string name="button_sign_up">Sign up</string>
 
-    <string name="label_default_film_title">Film title</string>
-    <string name="label_default_duration_title">Film duration</string>
+    <string name="label_default_movie_name">Movie name</string>
+    <string name="label_default_movie_duration_value">1 h 30 min</string>
 
     <string name="label_default_session_date">1 January 1970, 00:00</string>
     <string name="label_default_ticket_place">Place</string>
     <string name="label_default_ticket_row">Row</string>
-    <string name="label_default_ticket_place_number">0</string>
-    <string name="label_default_ticket_row_number">0</string>
+    <string name="label_default_ticket_place_value">0</string>
+    <string name="label_default_ticket_row_value">0</string>
 
     <string name="title_ticket_fragment">Tickets</string>
     <string name="title_profile_fragment">Profile</string>
+
+    <string name="default_title_movie_activity">Film</string>
+
+    <string name="label_default_movie_genres">Comedy, Fantasy, Drama, Detective</string>
+    <string name="label_default_movie_duration">Duration:</string>
+    <string name="label_default_movie_year">Year:</string>
+    <string name="label_default_movie_year_value">2024</string>
+    <string name="label_default_movie_producer">Producer:</string>
+    <string name="label_default_movie_producer_value">Quentin Jerome Tarantino</string>
+    <string name="text_default_description">Movie description</string>
 </resources>

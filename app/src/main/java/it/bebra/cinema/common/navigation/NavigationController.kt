@@ -1,4 +1,4 @@
-package it.bebra.cinema.presentation.main.controller
+package it.bebra.cinema.common.navigation
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView

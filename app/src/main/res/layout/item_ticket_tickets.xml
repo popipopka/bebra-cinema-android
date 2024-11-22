@@ -12,7 +12,7 @@
         android:padding="8dp">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/film_poster"
+            android:id="@+id/movie_poster"
             style="@style/Widget.BebraCinema.ImageView"
             android:layout_width="100dp"
             android:layout_height="142dp"
@@ -24,7 +24,7 @@
             tools:ignore="ContentDescription" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/film_title"
+            android:id="@+id/movie_name"
             style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_width="232dp"
             android:layout_height="wrap_content"
@@ -33,8 +33,8 @@
             android:gravity="center_vertical"
             android:letterSpacing="0.03"
             android:lines="2"
-            android:text="@string/label_default_film_title"
-            app:layout_constraintLeft_toRightOf="@id/film_poster"
+            android:text="@string/label_default_movie_name"
+            app:layout_constraintLeft_toRightOf="@id/movie_poster"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -48,8 +48,8 @@
             android:letterSpacing="0.04"
             android:maxLines="1"
             android:text="@string/label_default_session_date"
-            app:layout_constraintLeft_toRightOf="@id/film_poster"
-            app:layout_constraintTop_toBottomOf="@id/film_title" />
+            app:layout_constraintLeft_toRightOf="@id/movie_poster"
+            app:layout_constraintTop_toBottomOf="@id/movie_name" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/ticket_place_label"
@@ -61,7 +61,7 @@
             android:letterSpacing="0.05"
             android:text="@string/label_default_ticket_place"
             app:layout_constraintBottom_toTopOf="@id/ticket_place_number"
-            app:layout_constraintLeft_toRightOf="@id/film_poster"
+            app:layout_constraintLeft_toRightOf="@id/movie_poster"
             app:layout_constraintRight_toLeftOf="@id/ticket_row_label"
             app:layout_constraintTop_toBottomOf="@id/session_date" />
 
@@ -72,9 +72,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
-            android:text="@string/label_default_ticket_place_number"
+            android:text="@string/label_default_ticket_place_value"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/film_poster"
+            app:layout_constraintLeft_toRightOf="@id/movie_poster"
             app:layout_constraintRight_toLeftOf="@id/ticket_row_number"
             app:layout_constraintTop_toBottomOf="@id/ticket_place_label" />
 
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
-            android:text="@string/label_default_ticket_place_number"
+            android:text="@string/label_default_ticket_place_value"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/ticket_place_number"
             app:layout_constraintRight_toRightOf="parent"

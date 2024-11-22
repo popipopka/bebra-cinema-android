@@ -6,10 +6,10 @@ import dagger.hilt.android.AndroidEntryPoint
 import it.bebra.cinema.R
 import it.bebra.cinema.databinding.ActivityMainBinding
 import it.bebra.cinema.presentation.catalog.fragment.CatalogFragment
-import it.bebra.cinema.presentation.main.controller.FragmentLinks.CATALOG
-import it.bebra.cinema.presentation.main.controller.FragmentLinks.PROFILE
-import it.bebra.cinema.presentation.main.controller.FragmentLinks.TICKET
-import it.bebra.cinema.presentation.main.controller.NavigationController
+import it.bebra.cinema.common.navigation.FragmentLinks.CATALOG
+import it.bebra.cinema.common.navigation.FragmentLinks.PROFILE
+import it.bebra.cinema.common.navigation.FragmentLinks.TICKET
+import it.bebra.cinema.common.navigation.NavigationController
 import it.bebra.cinema.presentation.profile.fragment.ProfileFragment
 import it.bebra.cinema.presentation.tickets.fragment.TicketsFragment
 

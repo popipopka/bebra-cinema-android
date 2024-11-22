@@ -1,4 +1,4 @@
-package it.bebra.cinema.presentation.main.controller
+package it.bebra.cinema.common.navigation
 
 enum class FragmentLinks(val link: String) {
     TICKET("ticket"),

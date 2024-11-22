@@ -4,9 +4,9 @@
     <color name="color_onPrimary">#E0E0E0</color>
 
     <color name="color_surface">#D6D6D6</color>
+    <color name="color_onSurface">#404040</color>
     <color name="color_onSurfaceVariant">#404040</color>
     <color name="color_onSurfaceContainerHigh">#D1D1D1</color>
-    <color name="color_onSurface">#404040</color>
 
     <color name="color_secondaryContainer">#BFBFBF</color>
     <color name="color_onSecondaryContainer">#181818</color>

@@ -6,29 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
-import it.bebra.cinema.R
-import it.bebra.cinema.common.ui.HorizontalCenteringItemDecoration
 import it.bebra.cinema.common.ui.SpacingItemDecoration
 import it.bebra.cinema.databinding.FragmentTicketsBinding
 import it.bebra.cinema.presentation.tickets.recycle.TicketsListTicketAdapter
 import it.bebra.cinema.presentation.tickets.viewmodel.TicketsViewModel
-import it.bebra.domain.model.TicketListModel
-import kotlinx.coroutines.channels.TickerMode
-import java.time.LocalDateTime
-import java.time.Month
 
 @AndroidEntryPoint
 class TicketsFragment : Fragment() {
+    private lateinit var binding: FragmentTicketsBinding
 
     private val viewModel: TicketsViewModel by lazy {
         ViewModelProvider(this)[TicketsViewModel::class]
     }
-
-    private lateinit var binding: FragmentTicketsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,7 +36,9 @@ class TicketsFragment : Fragment() {
         setupRecyclerView()
         setupObservers()
 
-        viewModel.loadTickets()
+        if (binding.recyclerView.adapter?.itemCount == 0) {
+            viewModel.loadTickets()
+        }
     }
 
     private fun setupRecyclerView() {
@@ -59,7 +52,7 @@ class TicketsFragment : Fragment() {
 
     private fun setupObservers() {
         viewModel.resultResponses.observe(viewLifecycleOwner) {
-            (binding.recyclerView.adapter as TicketsListTicketAdapter).addData(it)
+            (binding.recyclerView.adapter as TicketsListTicketAdapter).submitList(it)
         }
     }
 }

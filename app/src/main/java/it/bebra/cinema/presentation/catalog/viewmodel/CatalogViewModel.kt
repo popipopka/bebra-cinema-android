@@ -26,40 +26,16 @@ class CatalogViewModel @Inject constructor() : ViewModel() {
                 100
             ),
             MovieListModel(
-                1,
+                2,
                 "https://image.openmoviedb.com/kinopoisk-images/10835644/e5e66936-58d5-426a-b860-d29f9bcc2311/orig",
                 "Фильм другой 2",
                 200
             ),
             MovieListModel(
-                1,
+                3,
                 "https://image.openmoviedb.com/kinopoisk-images/10835644/e5e66936-58d5-426a-b860-d29f9bcc2311/orig",
-                "Фильм точно другой 3",
+                "Фильм точно другой Фильм точно другой 3",
                 10
-            ),
-            MovieListModel(
-                1,
-                "https://image.openmoviedb.com/kinopoisk-images/10835644/e5e66936-58d5-426a-b860-d29f9bcc2311/orig",
-                "Фильм верьте 4",
-                50
-            ),
-            MovieListModel(
-                1,
-                "https://image.openmoviedb.com/kinopoisk-images/10835644/e5e66936-58d5-426a-b860-d29f9bcc2311/orig",
-                "Фильм фильм 5",
-                60
-            ),
-            MovieListModel(
-                1,
-                "https://image.openmoviedb.com/kinopoisk-images/10835644/e5e66936-58d5-426a-b860-d29f9bcc2311/orig",
-                "Фильм мультфильм 6",
-                20
-            ),
-            MovieListModel(
-                1,
-                "https://image.openmoviedb.com/kinopoisk-images/10835644/e5e66936-58d5-426a-b860-d29f9bcc2311/orig",
-                "Очень длинное название у фильма под номером 7",
-                120
             )
         )
     }

@@ -14,10 +14,11 @@
         android:layout_gravity="center">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/film_poster"
+            android:id="@+id/movie_poster"
             style="@style/Widget.BebraCinema.ImageView"
             android:layout_width="165dp"
             android:layout_height="235dp"
+            android:clickable="true"
             android:scaleType="centerCrop"
             android:src="@drawable/default_film_poster"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -33,9 +34,9 @@
             android:layout_marginStart="5dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="@string/label_default_film_title"
+            android:text="@string/label_default_movie_name"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/film_poster" />
+            app:layout_constraintTop_toBottomOf="@id/movie_poster" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/film_duration_label"
@@ -45,8 +46,7 @@
             android:layout_marginStart="5dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="@string/label_default_duration_title"
-            android:textSize="12sp"
+            android:text="@string/label_default_movie_duration_value"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/film_title_label" />
     </androidx.constraintlayout.widget.ConstraintLayout>
