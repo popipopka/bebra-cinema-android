@@ -15,10 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BebraCinema"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
         <activity
-            android:name=".presentation.main.activity.MainActivity"
+            android:name=".app.presentation.main.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,11 +29,12 @@
         </activity>
 
         <activity
-            android:name=".presentation.login.activity.LoginActivity"
+            android:name=".app.presentation.login.activity.LoginActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".presentation.register.activity.RegisterActivity" />
+        <activity android:name=".app.presentation.register.activity.RegisterActivity" />
 
-        <activity android:name=".presentation.movie.activity.MovieActivity" />
+        <activity android:name=".app.presentation.movie.activity.MovieActivity" />
+        <activity android:name=".app.presentation.purchase.activity.PurchaseActivity" />
     </application>
 
 </manifest>

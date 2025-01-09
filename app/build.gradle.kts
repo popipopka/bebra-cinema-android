@@ -33,18 +33,24 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
 dependencies {
     implementation(project(":domain"))
+    implementation(project(":output-port-adapter-retrofit"))
+    implementation(project(":remote-bebra-cinema-retrofit"))
 
     implementation(libs.coil)
+
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.dynamic.features.fragment)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
@@ -52,8 +58,8 @@ dependencies {
     runtimeOnly(libs.androidx.lifecycle.runtime.ktx)
 
     implementation(libs.androidx.core.ktx)
-    runtimeOnly(libs.androidx.fragment.ktx)
-    runtimeOnly(libs.androidx.activity.ktx)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.activity.ktx)
 
     implementation(libs.androidx.activity)
     implementation(libs.androidx.appcompat)

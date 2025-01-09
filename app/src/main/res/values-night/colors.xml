@@ -7,6 +7,7 @@
     <color name="color_onSurface">#B2B2B2</color>
     <color name="color_onSurfaceVariant">#B2B2B2</color>
     <color name="color_onSurfaceContainerHigh">#262626</color>
+    <color name="color_SurfaceContainerHighest">#303030</color>
 
     <color name="color_secondaryContainer">#404040</color>
 </resources>

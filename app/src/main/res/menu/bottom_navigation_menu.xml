@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/item_navigation_tickets"
+        android:id="@+id/ticketsFragment"
         android:enabled="true"
         android:icon="@drawable/ic_tickets"
         android:title="" />
 
     <item
-        android:id="@+id/item_navigation_home"
+        android:id="@+id/catalogFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_catalog"
         android:title="" />
 
     <item
-        android:id="@+id/item_navigation_profile"
+        android:id="@+id/profileFragment"
         android:enabled="true"
         android:icon="@drawable/ic_profile"
         android:title="" />

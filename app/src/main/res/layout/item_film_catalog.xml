@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/Widget.BebraCinema.CardView.WithoutStroke"
+    style="@style/Widget.BebraCinema.CardView.Movie"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@android:color/transparent"
@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:ellipsize="end"
+            android:letterSpacing="0.03"
             android:maxLines="1"
             android:text="@string/label_default_movie_name"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -45,8 +46,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:ellipsize="end"
+            android:letterSpacing="0.03"
             android:maxLines="1"
             android:text="@string/label_default_movie_duration_value"
+            android:textColor="@color/color_onSurface"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/film_title_label" />
     </androidx.constraintlayout.widget.ConstraintLayout>

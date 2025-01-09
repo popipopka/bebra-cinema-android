@@ -9,5 +9,6 @@
         <item name="colorOnSurface">@color/color_onSurface</item>
         <item name="colorSecondaryContainer">@color/color_secondaryContainer</item>
         <item name="colorOnSecondaryContainer">@color/color_onSecondaryContainer</item>
+        <item name="colorSurfaceContainerHighest">@color/color_SurfaceContainerHighest</item>
     </style>
 </resources>

@@ -1,38 +1,66 @@
 <resources>
     <string name="app_name">Bebra Cinema</string>
 
-    <string name="label_login">Login</string>
-    <string name="label_register">Register</string>
+    <string name="label_login">Логин</string>
+    <string name="label_register">Регистрация</string>
 
-    <string name="hint_username_input">Username</string>
-    <string name="hint_password_input">Password</string>
-    <string name="hint_first_name_input">First name</string>
-    <string name="hint_last_name_input">Last name</string>
-    <string name="hint_email_input">Email</string>
-    <string name="hint_search_bar_input">Search</string>
+    <string name="hint_username_input">Никнейм</string>
+    <string name="hint_password_input">Пароль</string>
+    <string name="hint_first_name_input">Имя</string>
+    <string name="hint_last_name_input">Фамилия</string>
+    <string name="hint_email_input">Почта</string>
+    <string name="hint_search_bar_input">Поиск</string>
 
-    <string name="button_sign_in">Sign in</string>
-    <string name="button_sign_up">Sign up</string>
+    <string name="button_sign_in">Войти</string>
+    <string name="button_sign_up">Зарегистрироваться</string>
 
-    <string name="label_default_movie_name">Movie name</string>
-    <string name="label_default_movie_duration_value">1 h 30 min</string>
+    <string name="label_default_movie_name">Название фильма</string>
+    <string name="label_default_movie_duration_value">1 ч 30 мин</string>
 
-    <string name="label_default_session_date">1 January 1970, 00:00</string>
-    <string name="label_default_ticket_place">Place</string>
-    <string name="label_default_ticket_row">Row</string>
+    <string name="label_default_session_date">1 Января 1970, 00:00</string>
+    <string name="label_default_ticket_place">Место</string>
+    <string name="label_default_ticket_row">Ряд</string>
     <string name="label_default_ticket_place_value">0</string>
     <string name="label_default_ticket_row_value">0</string>
 
-    <string name="title_ticket_fragment">Tickets</string>
-    <string name="title_profile_fragment">Profile</string>
+    <string name="title_ticket_fragment">Билеты</string>
+    <string name="title_profile_fragment">Профиль</string>
 
-    <string name="default_title_movie_activity">Film</string>
+    <string name="default_title_movie_activity">Название фильма</string>
 
-    <string name="label_default_movie_genres">Comedy, Fantasy, Drama, Detective</string>
-    <string name="label_default_movie_duration">Duration:</string>
-    <string name="label_default_movie_year">Year:</string>
+    <string name="label_default_movie_genres">Комедия, Фантазмя, Драма, Детектив</string>
+    <string name="label_default_movie_duration">Длительность:</string>
+    <string name="label_default_movie_year">Год:</string>
     <string name="label_default_movie_year_value">2024</string>
-    <string name="label_default_movie_producer">Producer:</string>
-    <string name="label_default_movie_producer_value">Quentin Jerome Tarantino</string>
-    <string name="text_default_description">Movie description</string>
+    <string name="label_default_movie_producer">Режиссёр:</string>
+    <string name="label_default_movie_producer_value">Квантин Джером Тарантино</string>
+    <string name="text_default_description">Описание фильма</string>
+
+    <string name="label_day_of_week">пт</string>
+    <string name="label_month">Январь</string>
+    <string name="label_day">31</string>
+
+    <string name="label_session_start_time">00:00</string>
+    <string name="label_hall_name">Зал 0</string>
+    <string name="label_ticket_price">999</string>
+    <string name="label_ruble_symbol">₽</string>
+
+    <string name="label_sessions">Сеансы</string>
+
+    <string name="label_user_name">Имя Фамилия</string>
+    <string name="label_user_email">johndoe@example.com</string>
+
+    <string name="label_user_created_at_time">1 янв. 1970, 00:00</string>
+    <string name="label_user_created_at_description">Дата создания профиля</string>
+    <string name="label_user_updated_at_time">1 янв. 1970, 00:00</string>
+    <string name="label_user_updated_at_description">Дата обновления профиля</string>
+
+    <string name="label_exit_system">Выйти из системы</string>
+
+    <string name="hint_ticket_row">Ряд</string>
+    <string name="hint_ticket_place">Место</string>
+
+    <string name="title_ticket_purchase">Покупка билета</string>
+    <string name="button_purchase">Купить</string>
+    <string name="button_cancel">Назад</string>
 </resources>
