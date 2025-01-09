@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowInsetsCompat.Type.statusBars
 import dagger.hilt.android.AndroidEntryPoint
+import it.bebra.cinema.app.common.ui.edgeToEdge
+import it.bebra.cinema.app.common.ui.padding
 import it.bebra.cinema.app.presentation.purchase.viewmodel.PurchaseViewModel
 import it.bebra.cinema.databinding.ActivityPurchaseBinding
 import it.bebra.cinema.domain.Resource.Error
@@ -26,10 +29,18 @@ class PurchaseActivity : AppCompatActivity() {
         binding = ActivityPurchaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupEdgeToEdge()
+
         handleIntent(intent)
 
         setupObservers()
         setupListeners()
+    }
+
+    private fun setupEdgeToEdge() {
+        edgeToEdge {
+            binding.root.padding(statusBars())
+        }
     }
 
     private fun handleIntent(intent: Intent) {
@@ -46,7 +57,7 @@ class PurchaseActivity : AppCompatActivity() {
             val row = rowInput.toIntOrNull()
             val place = placeInput.toIntOrNull()
 
-            if(row == null || place == null) {
+            if (row == null || place == null) {
                 Toast.makeText(this, "Укажите числовые значения", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }

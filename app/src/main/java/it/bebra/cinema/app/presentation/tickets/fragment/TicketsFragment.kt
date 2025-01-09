@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
 import dagger.hilt.android.AndroidEntryPoint
-import it.bebra.cinema.app.common.ui.LastItemBottomSpacingItemDecoration
-import it.bebra.cinema.app.common.ui.SpacingItemDecoration
+import it.bebra.cinema.app.common.ui.decoration.LastItemBottomSpacingItemDecoration
+import it.bebra.cinema.app.common.ui.decoration.SpacingItemDecoration
 import it.bebra.cinema.app.presentation.tickets.recycle.TicketsListTicketAdapter
 import it.bebra.cinema.app.presentation.tickets.viewmodel.TicketsViewModel
 import it.bebra.cinema.databinding.FragmentTicketsBinding

@@ -11,16 +11,16 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
 import dagger.hilt.android.AndroidEntryPoint
-import it.bebra.cinema.app.common.ui.HorizontalCenteringItemDecoration
-import it.bebra.cinema.app.common.ui.LastItemBottomSpacingItemDecoration
-import it.bebra.cinema.app.common.ui.SpacingItemDecoration
+import it.bebra.cinema.app.common.ui.decoration.HorizontalCenteringItemDecoration
+import it.bebra.cinema.app.common.ui.decoration.LastItemBottomSpacingItemDecoration
+import it.bebra.cinema.app.common.ui.decoration.SpacingItemDecoration
 import it.bebra.cinema.app.presentation.catalog.recycle.CatalogMovieListAdapter
 import it.bebra.cinema.app.presentation.catalog.viewmodel.CatalogViewModel
 import it.bebra.cinema.app.presentation.login.activity.LoginActivity
 import it.bebra.cinema.app.presentation.movie.activity.MovieActivity
 import it.bebra.cinema.databinding.FragmentCatalogBinding
-import it.bebra.cinema.domain.Resource.Unauthorized
 import it.bebra.cinema.domain.Resource.Success
+import it.bebra.cinema.domain.Resource.Unauthorized
 
 @AndroidEntryPoint
 class CatalogFragment : Fragment() {

@@ -1,25 +1,22 @@
-package it.bebra.cinema.app.common.ui
+package it.bebra.cinema.app.common.ui.decoration
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class SpacingItemDecoration(
-    private val left: Int,
-    private val top: Int,
-    private val right: Int,
-    private val bottom: Int
+class HorizontalCenteringItemDecoration(
+    private val spanCount: Int,
+    private val k: Int
 ) : RecyclerView.ItemDecoration() {
-
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
         parent: RecyclerView,
         state: RecyclerView.State
     ) {
-        outRect.left = left
-        outRect.top = top
-        outRect.right = right
-        outRect.bottom = bottom
+        val cellWidth = parent.width / spanCount
+
+        outRect.left = cellWidth / k
+        outRect.right = outRect.left
     }
 }

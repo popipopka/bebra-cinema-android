@@ -13,6 +13,7 @@
 
     <string name="button_sign_in">Войти</string>
     <string name="button_sign_up">Зарегистрироваться</string>
+    <string name="button_go_back">Назад</string>
 
     <string name="label_default_movie_name">Название фильма</string>
     <string name="label_default_movie_duration_value">1 ч 30 мин</string>

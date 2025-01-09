@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint
 import it.bebra.cinema.R
+import it.bebra.cinema.app.common.ui.edgeToEdge
 import it.bebra.cinema.app.presentation.login.viewmodel.LoginViewModel
 import it.bebra.cinema.app.presentation.main.activity.MainActivity
 import it.bebra.cinema.app.presentation.register.activity.RegisterActivity
@@ -24,9 +25,15 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+        setupEdgeToEdge()
 
         setupButtons()
         setupObservers()
+    }
+
+    private fun setupEdgeToEdge() {
+        edgeToEdge {
+        }
     }
 
     override fun onNewIntent(intent: Intent) {

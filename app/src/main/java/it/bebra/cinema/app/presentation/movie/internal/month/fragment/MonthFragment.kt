@@ -1,7 +1,6 @@
 package it.bebra.cinema.app.presentation.movie.internal.month.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
-import it.bebra.cinema.app.common.ui.SpacingItemDecoration
+import it.bebra.cinema.app.common.ui.decoration.SpacingItemDecoration
 import it.bebra.cinema.app.presentation.movie.internal.month.recycle.MonthDaysListAdapter
 import it.bebra.cinema.app.presentation.movie.viewmodel.MovieViewModel.*
 import it.bebra.cinema.databinding.FragmentMonthBinding

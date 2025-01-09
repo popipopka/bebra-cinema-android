@@ -2,11 +2,14 @@ package it.bebra.cinema.app.presentation.register.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowInsets.Type.ime
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import dagger.hilt.android.AndroidEntryPoint
+import it.bebra.cinema.app.common.ui.edgeToEdge
+import it.bebra.cinema.app.common.ui.padding
 import it.bebra.cinema.app.presentation.login.activity.LoginActivity
 import it.bebra.cinema.app.presentation.register.viewmodel.RegisterViewModel
 import it.bebra.cinema.databinding.ActivityRegistrationBinding
@@ -23,10 +26,18 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
+        setupEdgeToEdge()
 
         setupListeners()
         setupObservers()
+    }
+
+    private fun setupEdgeToEdge() {
+        edgeToEdge {
+            binding.root.padding(ime())
+        }
     }
 
     private fun setupListeners() {

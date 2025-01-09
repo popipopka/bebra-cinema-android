@@ -1,4 +1,4 @@
-package it.bebra.cinema.app.common.ui
+package it.bebra.cinema.app.common.ui.decoration
 
 import android.graphics.Rect
 import android.view.View

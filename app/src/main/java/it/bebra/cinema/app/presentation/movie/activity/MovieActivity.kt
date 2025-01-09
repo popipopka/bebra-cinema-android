@@ -3,20 +3,20 @@ package it.bebra.cinema.app.presentation.movie.activity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.bundleOf
+import androidx.core.view.WindowInsetsCompat.Type.statusBars
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 import it.bebra.cinema.R
-import it.bebra.cinema.app.common.ui.SpacingItemDecoration
+import it.bebra.cinema.app.common.ui.decoration.SpacingItemDecoration
+import it.bebra.cinema.app.common.ui.edgeToEdge
+import it.bebra.cinema.app.common.ui.padding
 import it.bebra.cinema.app.common.util.formatDuration
 import it.bebra.cinema.app.common.util.loadMovieImage
-import it.bebra.cinema.app.presentation.login.activity.LoginActivity
 import it.bebra.cinema.app.presentation.movie.adapter.pager.MonthViewPagerAdapter
 import it.bebra.cinema.app.presentation.movie.adapter.recycle.MovieSessionsListAdapter
 import it.bebra.cinema.app.presentation.movie.internal.month.fragment.MonthFragment
@@ -45,12 +45,20 @@ class MovieActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMovieBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
+        setupEdgeToEdge()
 
         handleIntent(intent)
 
         setupObservers()
         setupListeners()
+    }
+
+    private fun setupEdgeToEdge() {
+        edgeToEdge {
+            binding.root.padding(statusBars())
+        }
     }
 
     private fun handleIntent(intent: Intent) {

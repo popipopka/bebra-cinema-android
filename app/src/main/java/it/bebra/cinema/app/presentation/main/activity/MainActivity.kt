@@ -1,6 +1,7 @@
 package it.bebra.cinema.app.presentation.main.activity
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +25,17 @@ class MainActivity : AppCompatActivity() {
             binding = ActivityMainBinding.inflate(layoutInflater)
             setContentView(binding.root)
 
+            setupEdgeToEdge()
+
             setupNavigation()
+        }
+    }
+
+    private fun setupEdgeToEdge() {
+        // Через edgeToEdge { } ломается bootom navigation viewfe
+        window.apply {
+            statusBarColor = Color.TRANSPARENT
+            navigationBarColor = Color.TRANSPARENT
         }
     }
 
