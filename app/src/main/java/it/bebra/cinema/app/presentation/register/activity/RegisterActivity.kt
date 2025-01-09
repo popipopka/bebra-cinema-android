@@ -25,11 +25,11 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupButtons()
+        setupListeners()
         setupObservers()
     }
 
-    private fun setupButtons() {
+    private fun setupListeners() {
         binding.signUpBtn.setOnClickListener {
             val firstName = binding.firstNameInputLayout.editText?.text.toString()
             val lastName = binding.lastNameInputLayout.editText?.text.toString()
@@ -43,6 +43,10 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             vm.register(UserCreateRequest(firstName, lastName, email, username, password))
+        }
+
+        binding.goBackBtn.setOnClickListener {
+            finish()
         }
     }
 
