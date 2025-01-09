@@ -39,9 +39,10 @@ class TicketsFragment : Fragment() {
         setupRecyclerView()
         setupObservers()
 
-        if (binding.recyclerView.adapter?.itemCount == 0) {
-            vm.loadTickets()
-        }
+        (binding.recyclerView.adapter as TicketsListTicketAdapter)
+            .submitList(vm.tickets)
+
+        vm.loadTickets()
     }
 
     private fun setupRecyclerView() {

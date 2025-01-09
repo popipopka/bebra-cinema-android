@@ -29,24 +29,18 @@ class TicketsViewModel @Inject constructor(
     private var cursorLastId: Int? = null
     private var hasMoreTickets: Boolean = true
 
-    fun loadTickets() {
-        if (!hasMoreTickets) {
-            return
-        }
-
-        _ticketsResultFlow.emitInIO(viewModelScope) {
-            getAllTicketUseCase.invoke(cursorLastId, DEFAULT_TICKETS_PAGE_LIMIT).also { resource ->
-                resource.handle(
-                    onSuccess = {
-                            tickets += it.items
-                            cursorLastId = it.cursors[TicketPageCursor.LAST_ID.value]?.toInt()
-                            hasMoreTickets = it.hasMore
-                    },
-                    onEmpty = {
-                        hasMoreTickets = false
-                    }
-                )
-            }
+    fun loadTickets() = _ticketsResultFlow.emitInIO(viewModelScope) {
+        getAllTicketUseCase.invoke(cursorLastId, DEFAULT_TICKETS_PAGE_LIMIT).also { resource ->
+            resource.handle(
+                onSuccess = {
+                        tickets += it.items
+                        cursorLastId = it.cursors[TicketPageCursor.LAST_ID.value]?.toInt()
+                        hasMoreTickets = it.hasMore
+                },
+                onEmpty = {
+                    hasMoreTickets = false
+                }
+            )
         }
     }
 }
