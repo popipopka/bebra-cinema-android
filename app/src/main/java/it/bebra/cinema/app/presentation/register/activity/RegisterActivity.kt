@@ -31,7 +31,18 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun setupButtons() {
         binding.signUpBtn.setOnClickListener {
-            vm.register(getUserData())
+            val firstName = binding.firstNameInputLayout.editText?.text.toString()
+            val lastName = binding.lastNameInputLayout.editText?.text.toString()
+            val email = binding.emailInputLayout.editText?.text.toString()
+            val username = binding.usernameInputLayout.editText?.text.toString()
+            val password = binding.passwordInputLayout.editText?.text.toString()
+
+            if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Укажите данные", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            vm.register(UserCreateRequest(firstName, lastName, email, username, password))
         }
     }
 
@@ -48,16 +59,6 @@ class RegisterActivity : AppCompatActivity() {
                 else -> Unit
             }
         }
-    }
-
-    private fun getUserData(): UserCreateRequest {
-        val firstName = binding.firstNameInputLayout.editText?.text.toString()
-        val lastName = binding.lastNameInputLayout.editText?.text.toString()
-        val email = binding.emailInputLayout.editText?.text.toString()
-        val username = binding.usernameInputLayout.editText?.text.toString()
-        val password = binding.passwordInputLayout.editText?.text.toString()
-
-        return UserCreateRequest(firstName, lastName, email, username, password)
     }
 
     private fun startLoginActivity() {
