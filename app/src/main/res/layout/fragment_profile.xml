@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginBottom="41dp">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/top_bar"
@@ -170,7 +171,7 @@
             <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/ic_exit"/>
+                android:src="@drawable/ic_exit" />
 
             <com.google.android.material.textview.MaterialTextView
                 style="@style/TextAppearance.Material3.TitleMedium"
@@ -179,10 +180,9 @@
                 android:layout_marginStart="10dp"
                 android:gravity="center"
                 android:text="@string/label_exit_system"
-                android:textColor="@color/color_onSurface"/>
+                android:textColor="@color/color_onSurface" />
 
         </LinearLayout>
-
 
 
     </com.google.android.material.card.MaterialCardView>
