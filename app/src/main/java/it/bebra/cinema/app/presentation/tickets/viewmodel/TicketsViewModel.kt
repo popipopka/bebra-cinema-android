@@ -18,7 +18,7 @@ class TicketsViewModel @Inject constructor(
     private val getAllTicketUseCase: GetAllTicketsInputPort
 ) : ViewModel() {
     companion object {
-        private const val DEFAULT_TICKETS_PAGE_LIMIT = 5
+        private const val DEFAULT_TICKETS_PAGE_LIMIT = 10
     }
 
     private val _ticketsResultFlow =
@@ -29,18 +29,30 @@ class TicketsViewModel @Inject constructor(
     private var cursorLastId: Int? = null
     private var hasMoreTickets: Boolean = true
 
-    fun loadTickets() = _ticketsResultFlow.emitInIO(viewModelScope) {
-        getAllTicketUseCase.invoke(cursorLastId, DEFAULT_TICKETS_PAGE_LIMIT).also { resource ->
-            resource.handle(
-                onSuccess = {
+    fun loadTickets() {
+        if (!hasMoreTickets) {
+            return
+        }
+
+        _ticketsResultFlow.emitInIO(viewModelScope) {
+            getAllTicketUseCase.invoke(cursorLastId, DEFAULT_TICKETS_PAGE_LIMIT).also { resource ->
+                resource.handle(
+                    onSuccess = {
                         tickets += it.items
                         cursorLastId = it.cursors[TicketPageCursor.LAST_ID.value]?.toInt()
                         hasMoreTickets = it.hasMore
-                },
-                onEmpty = {
-                    hasMoreTickets = false
-                }
-            )
+                    },
+                    onEmpty = {
+                        hasMoreTickets = false
+                    }
+                )
+            }
         }
+    }
+
+    fun resetState() {
+        tickets = mutableListOf()
+        cursorLastId = null
+        hasMoreTickets = true
     }
 }

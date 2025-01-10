@@ -39,9 +39,11 @@ class TicketsFragment : Fragment() {
         setupRecyclerView()
         setupObservers()
 
-        (binding.recyclerView.adapter as TicketsListTicketAdapter)
-            .submitList(vm.tickets)
-
+        /*TODO Сделать сохранение состояния в viewModel, чтобы каждый раз все заново не загружать.
+        * Для этого подгрузить первую страницу при создании фрагмента и проверить полученные данные.
+        * Если хоть что-то уже есть, то просто добавить новое и больше не грузить
+        */
+        vm.resetState()
         vm.loadTickets()
     }
 

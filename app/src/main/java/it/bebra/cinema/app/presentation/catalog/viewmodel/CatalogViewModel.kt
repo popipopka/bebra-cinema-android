@@ -30,6 +30,7 @@ class CatalogViewModel @Inject constructor(
     private var hasMoreMovies: Boolean = true
 
     fun loadMovies() {
+
         if (!hasMoreMovies) {
             return
         }
@@ -51,6 +52,4 @@ class CatalogViewModel @Inject constructor(
 
         }
     }
-
-
 }

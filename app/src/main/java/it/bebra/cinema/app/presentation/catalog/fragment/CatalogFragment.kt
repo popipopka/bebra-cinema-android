@@ -47,10 +47,12 @@ class CatalogFragment : Fragment() {
 
         setupRecyclerView()
         setupObservers()
+    }
 
-        if (binding.recyclerView.adapter?.itemCount == 0) {
-            vm.loadMovies()
-        }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        vm.loadMovies()
     }
 
     private fun startMovieActivity(id: Int) {
@@ -74,11 +76,15 @@ class CatalogFragment : Fragment() {
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)
 
+                    if (isMoviesLoading) {
+                        return
+                    }
+
                     val layoutManager = recyclerView.layoutManager as GridLayoutManager
                     val totalItemCount = layoutManager.itemCount
                     val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
 
-                    if (!isMoviesLoading && (totalItemCount <= (lastVisibleItem + 1))) {
+                    if ((totalItemCount <= (lastVisibleItem + 1))) {
                         isMoviesLoading = true
                         vm.loadMovies()
                     }
