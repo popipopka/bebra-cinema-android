@@ -28,6 +28,7 @@ class CatalogViewModel @Inject constructor(
     var movies: List<MovieListResponse> = mutableListOf()
     private var cursorLastId: Int? = null
     private var hasMoreMovies: Boolean = true
+    var query: String? = null
 
     fun loadMovies() {
 
@@ -37,7 +38,7 @@ class CatalogViewModel @Inject constructor(
 
         _moviesResultFlow.emitInIO(viewModelScope) {
             getAllMoviesUseCase
-                .invoke(cursorLastId, DEFAULT_MOVIES_PAGE_LIMIT).also { resource ->
+                .invoke(cursorLastId, DEFAULT_MOVIES_PAGE_LIMIT, query).also { resource ->
                     resource.handle(
                         onSuccess = {
                             movies += it.items
@@ -45,11 +46,22 @@ class CatalogViewModel @Inject constructor(
                             hasMoreMovies = it.hasMore
                         },
                         onEmpty = {
+                            if (cursorLastId == null) {
+                                movies = mutableListOf()
+                            }
+
                             hasMoreMovies = false
                         }
                     )
                 }
 
         }
+    }
+
+    fun resetState() {
+        movies = mutableListOf()
+        cursorLastId = null
+        hasMoreMovies = true
+        query = null
     }
 }

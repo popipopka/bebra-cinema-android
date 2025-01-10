@@ -7,8 +7,8 @@ class MovieGateway(
     private val movieApi: MovieApi
 ) {
 
-    suspend fun getAllMovies(accessToken: String, lastId: Int?, limit: Int?) =
-        movieApi.getAllMovies(getJwtAuthHeader(accessToken), lastId, limit)
+    suspend fun getAllMovies(accessToken: String, lastId: Int?, limit: Int?, query: String?) =
+        movieApi.getAllMovies(getJwtAuthHeader(accessToken), lastId, limit, query)
 
     suspend fun getMovie(accessToken: String, id: Int) =
         movieApi.getMovie(getJwtAuthHeader(accessToken), id)

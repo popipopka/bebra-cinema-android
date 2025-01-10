@@ -5,5 +5,5 @@ import it.bebra.cinema.domain.dto.page.PageResponse
 import it.bebra.cinema.domain.dto.movie.MovieListResponse
 
 interface GetAllMoviesInputPort {
-    suspend fun invoke(lastId: Int?, limit: Int?): Resource<PageResponse<MovieListResponse>>
+    suspend fun invoke(lastId: Int?, limit: Int?, query: String?): Resource<PageResponse<MovieListResponse>>
 }

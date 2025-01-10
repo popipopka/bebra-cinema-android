@@ -9,7 +9,7 @@
     <string name="hint_first_name_input">Имя</string>
     <string name="hint_last_name_input">Фамилия</string>
     <string name="hint_email_input">Почта</string>
-    <string name="hint_search_bar_input">Поиск</string>
+    <string name="hint_search">Поиск</string>
 
     <string name="button_sign_in">Войти</string>
     <string name="button_sign_up">Зарегистрироваться</string>

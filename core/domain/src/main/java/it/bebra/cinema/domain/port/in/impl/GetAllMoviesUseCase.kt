@@ -15,10 +15,10 @@ class GetAllMoviesUseCase(
     private val storage: EncryptedStorage,
     private val requestManager: RequestManager
 ) : GetAllMoviesInputPort {
-    override suspend fun invoke(lastId: Int?, limit: Int?): Resource<PageResponse<MovieListResponse>> =
+    override suspend fun invoke(lastId: Int?, limit: Int?, query: String?): Resource<PageResponse<MovieListResponse>> =
         requestManager {
             val token = storage.getString(StorageKeys.ACCESS_TOKEN)
-            val result = movieOutputPort.getAllMovies(token!!, lastId, limit)
+            val result = movieOutputPort.getAllMovies(token!!, lastId, limit, query)
 
             handleErrorResult(javaClass.simpleName, result)
 

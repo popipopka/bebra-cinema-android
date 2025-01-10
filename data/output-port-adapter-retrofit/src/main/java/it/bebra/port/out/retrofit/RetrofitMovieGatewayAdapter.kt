@@ -16,9 +16,10 @@ class RetrofitMovieGatewayAdapter(
     override suspend fun getAllMovies(
         token: String,
         lastId: Int?,
-        limit: Int?
+        limit: Int?,
+        query: String?
     ): Resource<PageResponse<MovieListResponse>> =
-        handler(retrofitMovieGateway.getAllMovies(token, lastId, limit))
+        handler(retrofitMovieGateway.getAllMovies(token, lastId, limit, query))
 
     override suspend fun getMovie(token: String, id: Int): Resource<MovieDetailResponse> =
         handler(retrofitMovieGateway.getMovie(token, id))

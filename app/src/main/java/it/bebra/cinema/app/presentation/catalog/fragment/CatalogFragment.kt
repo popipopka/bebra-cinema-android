@@ -2,9 +2,11 @@ package it.bebra.cinema.app.presentation.catalog.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -19,6 +21,7 @@ import it.bebra.cinema.app.presentation.catalog.viewmodel.CatalogViewModel
 import it.bebra.cinema.app.presentation.login.activity.LoginActivity
 import it.bebra.cinema.app.presentation.movie.activity.MovieActivity
 import it.bebra.cinema.databinding.FragmentCatalogBinding
+import it.bebra.cinema.domain.Resource.Empty
 import it.bebra.cinema.domain.Resource.Success
 import it.bebra.cinema.domain.Resource.Unauthorized
 
@@ -47,6 +50,7 @@ class CatalogFragment : Fragment() {
 
         setupRecyclerView()
         setupObservers()
+        setupListeners()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,26 +75,59 @@ class CatalogFragment : Fragment() {
             addItemDecoration(LastItemBottomSpacingItemDecoration(86))
 
             adapter = CatalogMovieListAdapter(::startMovieActivity)
-
-            addOnScrollListener(object : OnScrollListener() {
-                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                    super.onScrolled(recyclerView, dx, dy)
-
-                    if (isMoviesLoading) {
-                        return
-                    }
-
-                    val layoutManager = recyclerView.layoutManager as GridLayoutManager
-                    val totalItemCount = layoutManager.itemCount
-                    val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
-
-                    if ((totalItemCount <= (lastVisibleItem + 1))) {
-                        isMoviesLoading = true
-                        vm.loadMovies()
-                    }
-                }
-            })
         }
+    }
+
+    private fun setupListeners() {
+        binding.recyclerView.addOnScrollListener(object : OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                if (isMoviesLoading) {
+                    return
+                }
+
+                val layoutManager = recyclerView.layoutManager as GridLayoutManager
+                val totalItemCount = layoutManager.itemCount
+                val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
+
+                if ((totalItemCount <= (lastVisibleItem + 1))) {
+                    isMoviesLoading = true
+                    vm.loadMovies()
+                }
+            }
+        })
+
+        binding.searchView.apply {
+            setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    if (!query.equals(vm.query)) {
+                        searchMovies(query)
+
+                        binding.searchView.clearFocus()
+
+                        return false
+                    }
+
+                    return true
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean = true
+            })
+
+            setOnQueryTextFocusChangeListener { v, hasFocus ->
+                if (!hasFocus && this.query.isNullOrEmpty() && !vm.query.isNullOrEmpty()) {
+                    Log.d("Search", "пусто")
+                    searchMovies(null)
+                }
+            }
+        }
+    }
+
+    private fun searchMovies(query: String?) {
+        vm.resetState()
+        vm.query = query
+        vm.loadMovies()
     }
 
     private fun setupObservers() {
@@ -102,6 +139,9 @@ class CatalogFragment : Fragment() {
 
                     isMoviesLoading = false
                 }
+
+                is Empty -> (binding.recyclerView.adapter as CatalogMovieListAdapter)
+                    .submitList(vm.movies)
 
                 is Unauthorized -> startLoginActivity()
 
