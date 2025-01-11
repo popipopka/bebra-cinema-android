@@ -2,12 +2,14 @@ package it.bebra.cinema.remote.retrofit.api
 
 import it.bebra.cinema.domain.dto.user.UserCreateRequest
 import it.bebra.cinema.domain.dto.user.UserDetailResponse
+import it.bebra.cinema.domain.dto.user.UserUpdateRequest
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Headers
+import retrofit2.http.PATCH
 import retrofit2.http.POST
 
 interface UserApi {
@@ -26,5 +28,11 @@ interface UserApi {
     @DELETE("api/v1/users/me")
     suspend fun deleteCurrentUser(
         @Header("Authorization") jwtHeader: String
-    ) : Response<Unit>
+    ): Response<Unit>
+
+    @PATCH("api/v1/users/me")
+    suspend fun updateCurrentUser(
+        @Header("Authorization") jwtHeader: String,
+        @Body body: UserUpdateRequest
+    ): Response<Unit>
 }

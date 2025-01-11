@@ -57,6 +57,7 @@
     <string name="label_user_updated_at_description">Дата обновления профиля</string>
 
     <string name="label_exit_system">Выйти из системы</string>
+    <string name="label_edit_user">Редактировать профиль</string>
     <string name="label_delete_user">Удалить аккаунт</string>
 
     <string name="hint_ticket_row">Ряд</string>
@@ -64,10 +65,13 @@
 
     <string name="title_ticket_purchase">Покупка билета</string>
     <string name="button_purchase">Купить</string>
-    <string name="button_cancel">Назад</string>
+    <string name="button_cancel">Отмена</string>
 
     <string name="delete_user_dialog_title">Подтверждение действия</string>
     <string name="delete_user_dialog_message">Вы уверены, что хотите удалить аккаунт?</string>
     <string name="delete_user_dialog_positive_btn">Удалить</string>
     <string name="delete_user_dialog_negative_btn">Отменить</string>
+
+    <string name="title_user_editing">Редактирование\nпрофиля</string>
+    <string name="edit_btn">Изменить</string>
 </resources>

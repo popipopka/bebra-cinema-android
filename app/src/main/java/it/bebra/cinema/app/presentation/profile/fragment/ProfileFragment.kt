@@ -13,6 +13,7 @@ import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import it.bebra.cinema.R
 import it.bebra.cinema.app.common.util.formatDateTime
+import it.bebra.cinema.app.presentation.editing.activity.UpdatingActivity
 import it.bebra.cinema.app.presentation.login.activity.LoginActivity
 import it.bebra.cinema.app.presentation.profile.viewmodel.ProfileViewModel
 import it.bebra.cinema.databinding.FragmentProfileBinding
@@ -37,17 +38,17 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        vm.getUserProfile()
+
         setupObservers()
         setupListeners()
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        vm.getUserProfile()
-    }
-
     private fun setupListeners() {
+        binding.updateUser.setOnClickListener {
+            startUpdatingActivity()
+        }
+
         binding.exitSystem.setOnClickListener {
             logout()
         }
@@ -85,13 +86,6 @@ class ProfileFragment : Fragment() {
         startLoginActivity()
     }
 
-    private fun startLoginActivity() {
-        val intent = Intent(this.context, LoginActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-
-        startActivity(intent)
-    }
-
     private fun setupObservers() {
         vm.userProfileResultFlow.observe(viewLifecycleOwner) {
             when (it) {
@@ -108,6 +102,17 @@ class ProfileFragment : Fragment() {
                 else -> Unit
             }
         }
+    }
+
+    private fun startUpdatingActivity() {
+        startActivity(Intent(this.context, UpdatingActivity::class.java))
+    }
+
+    private fun startLoginActivity() {
+        val intent = Intent(this.context, LoginActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+
+        startActivity(intent)
     }
 
     @SuppressLint("SetTextI18n")

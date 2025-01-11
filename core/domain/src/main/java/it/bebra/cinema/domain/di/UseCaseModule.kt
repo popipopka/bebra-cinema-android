@@ -18,6 +18,7 @@ import it.bebra.cinema.domain.port.`in`.GetUserProfileInputPort
 import it.bebra.cinema.domain.port.`in`.IsUserLoggedInInputPort
 import it.bebra.cinema.domain.port.`in`.LoginInputPort
 import it.bebra.cinema.domain.port.`in`.LogoutInputPort
+import it.bebra.cinema.domain.port.`in`.UpdateUserInputPort
 import it.bebra.cinema.domain.port.`in`.impl.CreateTicketUseCase
 import it.bebra.cinema.domain.port.`in`.impl.CreateUserUseCase
 import it.bebra.cinema.domain.port.`in`.impl.DeleteUserUseCase
@@ -30,6 +31,7 @@ import it.bebra.cinema.domain.port.`in`.impl.GetUserProfileUseCase
 import it.bebra.cinema.domain.port.`in`.impl.IsUserLoggedInUseCase
 import it.bebra.cinema.domain.port.`in`.impl.LoginUseCase
 import it.bebra.cinema.domain.port.`in`.impl.LogoutUseCase
+import it.bebra.cinema.domain.port.`in`.impl.UpdateUserUseCase
 import it.bebra.cinema.domain.port.out.AuthOutputPort
 import it.bebra.cinema.domain.port.out.MovieOutputPort
 import it.bebra.cinema.domain.port.out.SessionOutputPort
@@ -163,4 +165,13 @@ class UseCaseModule {
         manager: RequestManager
     ): DeleteUserInputPort =
         DeleteUserUseCase(outputPort, storage, manager)
+
+    @Provides
+    @Singleton
+    fun provideUpdateUserInputPort(
+        storage: EncryptedStorage,
+        outputPort: UserOutputPort,
+        manager: RequestManager
+    ): UpdateUserInputPort =
+        UpdateUserUseCase(outputPort, storage, manager)
 }

@@ -78,7 +78,7 @@ class PurchaseActivity : AppCompatActivity() {
                     finish()
                 }
 
-                is Error -> Toast.makeText(this, "Произогла ошибка", Toast.LENGTH_SHORT).show()
+                is Error -> Toast.makeText(this, "Произошла ошибка", Toast.LENGTH_SHORT).show()
 
                 else -> Unit
             }

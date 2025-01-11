@@ -35,6 +35,7 @@
 
         <activity android:name=".app.presentation.movie.activity.MovieActivity" />
         <activity android:name=".app.presentation.purchase.activity.PurchaseActivity" />
+        <activity android:name=".app.presentation.editing.activity.UpdatingActivity" />
     </application>
 
 </manifest>
