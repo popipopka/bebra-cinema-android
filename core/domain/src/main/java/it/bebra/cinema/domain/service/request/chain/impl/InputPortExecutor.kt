@@ -4,6 +4,7 @@ import android.util.Log
 import it.bebra.cinema.domain.Resource
 import it.bebra.cinema.domain.Resource.Empty
 import it.bebra.cinema.domain.Resource.Success
+import it.bebra.cinema.domain.Resource.Unauthorized
 import it.bebra.cinema.domain.service.request.chain.AbstractRequestHandler
 import it.bebra.cinema.domain.service.request.chain.RequestHandler
 import it.bebra.cinema.domain.service.request.chain.RequestHandler.Companion.LOG_TAG
@@ -22,9 +23,13 @@ class InputPortExecutor<T>(
                 result
             }
 
-            else -> {
-                Log.d(LOG_TAG, "Вызов метода завершился с ошибкой")
+            is Unauthorized -> {
+                Log.d(LOG_TAG, "Пользователь не авторизирован")
                 super.handleFailure()
+            }
+
+            else -> {
+                result
             }
         }
     }

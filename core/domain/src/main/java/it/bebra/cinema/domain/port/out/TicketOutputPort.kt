@@ -14,4 +14,6 @@ interface TicketOutputPort {
     ): Resource<PageResponse<TicketListResponse>>
 
     suspend fun createTicket(token: String, ticket: TicketCreateRequest): Resource<Unit>
+
+    suspend fun deleteTicket(token: String, id: Int): Resource<Unit>
 }

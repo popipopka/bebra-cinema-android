@@ -5,10 +5,12 @@ import it.bebra.cinema.domain.dto.ticket.TicketCreateRequest
 import it.bebra.cinema.domain.dto.ticket.TicketListResponse
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface TicketApi {
@@ -25,5 +27,11 @@ interface TicketApi {
     suspend fun createTicket(
         @Header("Authorization") jwtHeader: String,
         @Body body: TicketCreateRequest,
+    ): Response<Unit>
+
+    @DELETE("api/v1/tickets/{id}")
+    suspend fun deleteTicket(
+        @Header("Authorization") jwtHeader: String,
+        @Path("id") id: Int
     ): Response<Unit>
 }

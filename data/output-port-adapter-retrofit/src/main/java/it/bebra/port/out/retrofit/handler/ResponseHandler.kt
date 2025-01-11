@@ -29,9 +29,9 @@ class ResponseHandler {
         } else {
             if (response.code() == 401) {
                 Resource.Unauthorized
+            } else {
+                Resource.Error(getErrorMessage(response.code()))
             }
-
-            Resource.Error(getErrorMessage(response.code()))
         }
     }
 

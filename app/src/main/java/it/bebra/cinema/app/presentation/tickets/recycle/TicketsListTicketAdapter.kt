@@ -2,6 +2,7 @@ package it.bebra.cinema.app.presentation.tickets.recycle
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -12,10 +13,13 @@ import it.bebra.cinema.app.presentation.tickets.recycle.TicketsListTicketAdapter
 import it.bebra.cinema.databinding.ItemTicketTicketsBinding
 import it.bebra.cinema.domain.dto.ticket.TicketListResponse
 
-class TicketsListTicketAdapter : ListAdapter<TicketListResponse, TicketViewHolder>(DiffCallback()) {
+class TicketsListTicketAdapter(
+    private val onLongClick: (View, Int) -> Unit
+) : ListAdapter<TicketListResponse, TicketViewHolder>(DiffCallback()) {
 
     class TicketViewHolder(
-        private val binding: ItemTicketTicketsBinding
+        private val binding: ItemTicketTicketsBinding,
+        private val onLongClick: (View, Int) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
 
         @SuppressLint("SetTextI18n")
@@ -29,6 +33,11 @@ class TicketsListTicketAdapter : ListAdapter<TicketListResponse, TicketViewHolde
                 formatDateTime(ticket.sessionStartTime, "dd MMMM yyyy, HH:mm")
             binding.ticketPlaceNumber.text = ticket.place.toString()
             binding.ticketRowNumber.text = ticket.row.toString()
+
+            binding.root.setOnLongClickListener {
+                onLongClick(this.itemView, ticket.id)
+                true
+            }
         }
     }
 
@@ -36,7 +45,7 @@ class TicketsListTicketAdapter : ListAdapter<TicketListResponse, TicketViewHolde
         val vhBinding =
             ItemTicketTicketsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        return TicketViewHolder(vhBinding)
+        return TicketViewHolder(vhBinding, onLongClick)
     }
 
     override fun onBindViewHolder(holder: TicketViewHolder, position: Int) {

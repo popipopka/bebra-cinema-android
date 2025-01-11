@@ -9,13 +9,15 @@ import it.bebra.cinema.domain.Resource
 import it.bebra.cinema.domain.dto.page.PageResponse
 import it.bebra.cinema.domain.dto.page.TicketPageCursor
 import it.bebra.cinema.domain.dto.ticket.TicketListResponse
+import it.bebra.cinema.domain.port.`in`.DeleteTicketInputPort
 import it.bebra.cinema.domain.port.`in`.GetAllTicketsInputPort
 import kotlinx.coroutines.flow.MutableStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
 class TicketsViewModel @Inject constructor(
-    private val getAllTicketUseCase: GetAllTicketsInputPort
+    private val getAllTicketUseCase: GetAllTicketsInputPort,
+    private val deleteTicketInputPort: DeleteTicketInputPort
 ) : ViewModel() {
     companion object {
         private const val DEFAULT_TICKETS_PAGE_LIMIT = 10
@@ -23,9 +25,13 @@ class TicketsViewModel @Inject constructor(
 
     private val _ticketsResultFlow =
         MutableStateFlow<Resource<PageResponse<TicketListResponse>>>(Resource.Loading)
-    val resultFlow = _ticketsResultFlow.asLiveData()
+    val ticketsResultFlow = _ticketsResultFlow.asLiveData()
 
-    var tickets: List<TicketListResponse> = mutableListOf()
+    private val _deleteResultFlow =
+        MutableStateFlow<Resource<Unit>>(Resource.Loading)
+    val deleteResultFlow = _deleteResultFlow.asLiveData()
+
+    var tickets: MutableList<TicketListResponse> = mutableListOf()
     private var cursorLastId: Int? = null
     private var hasMoreTickets: Boolean = true
 
@@ -48,6 +54,10 @@ class TicketsViewModel @Inject constructor(
                 )
             }
         }
+    }
+
+    fun deleteTicket(id: Int) = _deleteResultFlow.emitInIO(viewModelScope) {
+        deleteTicketInputPort.invoke(id)
     }
 
     fun resetState() {

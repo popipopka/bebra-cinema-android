@@ -13,4 +13,7 @@ class TicketGateway(
 
     suspend fun createTicket(accessToken: String, ticket: TicketCreateRequest) =
         ticketApi.createTicket(getJwtAuthHeader(accessToken), ticket)
+
+    suspend fun deleteTicket(accessToken: String, id: Int) =
+        ticketApi.deleteTicket(getJwtAuthHeader(accessToken), id)
 }

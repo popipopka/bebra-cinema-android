@@ -24,4 +24,7 @@ class RetrofitTicketGatewayAdapter(
         token: String,
         ticket: TicketCreateRequest
     ): Resource<Unit> = handler(retrofitTicketGateway.createTicket(token, ticket))
+
+    override suspend fun deleteTicket(token: String, id: Int): Resource<Unit> =
+        handler(retrofitTicketGateway.deleteTicket(token, id))
 }
