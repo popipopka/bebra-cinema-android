@@ -13,4 +13,7 @@ class UserGateway(
 
     suspend fun getUserProfile(accessToken: String) =
         userApi.getCurrentUser(getJwtAuthHeader(accessToken))
+
+    suspend fun deleteCurrentUser(accessToken: String) =
+        userApi.deleteCurrentUser(getJwtAuthHeader(accessToken))
 }

@@ -8,6 +8,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import it.bebra.cinema.domain.port.`in`.CreateTicketInputPort
 import it.bebra.cinema.domain.port.`in`.CreateUserInputPort
+import it.bebra.cinema.domain.port.`in`.DeleteUserInputPort
 import it.bebra.cinema.domain.port.`in`.GetAllMovieSessionsInputPort
 import it.bebra.cinema.domain.port.`in`.GetAllMoviesInputPort
 import it.bebra.cinema.domain.port.`in`.GetAllTicketsInputPort
@@ -19,6 +20,7 @@ import it.bebra.cinema.domain.port.`in`.LoginInputPort
 import it.bebra.cinema.domain.port.`in`.LogoutInputPort
 import it.bebra.cinema.domain.port.`in`.impl.CreateTicketUseCase
 import it.bebra.cinema.domain.port.`in`.impl.CreateUserUseCase
+import it.bebra.cinema.domain.port.`in`.impl.DeleteUserUseCase
 import it.bebra.cinema.domain.port.`in`.impl.GetAllMovieSessionsUseCase
 import it.bebra.cinema.domain.port.`in`.impl.GetAllMoviesUseCase
 import it.bebra.cinema.domain.port.`in`.impl.GetAllTicketsUseCase
@@ -152,4 +154,13 @@ class UseCaseModule {
         storage: EncryptedStorage
     ): LogoutInputPort =
         LogoutUseCase(storage)
+
+    @Provides
+    @Singleton
+    fun provideDeleteUserInputPort(
+        storage: EncryptedStorage,
+        outputPort: UserOutputPort,
+        manager: RequestManager
+    ): DeleteUserInputPort =
+        DeleteUserUseCase(outputPort, storage, manager)
 }

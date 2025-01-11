@@ -8,4 +8,6 @@ interface UserOutputPort {
     suspend fun createUser(user: UserCreateRequest): Resource<Unit>
 
     suspend fun getUserProfile(token: String): Resource<UserDetailResponse>
+
+    suspend fun deleteUser(token: String): Resource<Unit>
 }

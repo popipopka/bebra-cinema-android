@@ -16,4 +16,7 @@ class RetrofitUserGatewayAdapter(
 
     override suspend fun getUserProfile(token: String): Resource<UserDetailResponse> =
         handler(retrofitUserGateway.getUserProfile(token))
+
+    override suspend fun deleteUser(token: String): Resource<Unit> =
+        handler(retrofitUserGateway.deleteCurrentUser(token))
 }
