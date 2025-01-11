@@ -2,6 +2,7 @@ package it.bebra.cinema.app.presentation.login.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
@@ -48,8 +49,13 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.signInBtn.setOnClickListener {
-            val username = binding.usernameInputLayout.editText?.text.toString()
-            val password = binding.passwordInputLayout.editText?.text.toString()
+            val username = binding.usernameInputLayout.editText?.text?.trim().toString()
+            val password = binding.passwordInputLayout.editText?.text?.trim().toString()
+
+            if (username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Введите данные", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             viewModel.login(LoginRequest(username, password))
         }
